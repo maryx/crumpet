@@ -1,0 +1,1 @@
+You are not allowed to redistribute this app or any part of its code for commercial gain.
