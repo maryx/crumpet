@@ -49,7 +49,7 @@ function BibtexParser(arg0) {
       'errors':     parser.getErrors()
     }
   }
-  else if (typeof arg0 != 'function') {
+  if (typeof arg0 != 'function') {
     throw 'Invalid parser construction...!';
   }
 
