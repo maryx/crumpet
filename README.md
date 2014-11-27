@@ -28,8 +28,6 @@ Important Not-Implemented Features
 - Replicate the LaTeX/BibTex reference system
   - Generate bibliography entries in order cited, or alphabetically
   - Create `id` attributes in bibiography to enable internal citation links (currently done manually)
-  - Fill inline citations automatically
-    - i.e., `<a href=#Knuth77></a>` becomes a clickable reference styled as (Knuth, 1977) in text
 - Page headers/footers for print (document title, author, page number)
   - Browser does this but it looks ugly
 - Better page-break rules so that important elements like sidenotes aren't split across pages. Without actual floating elements, there's only so much that can be done here, though.
