@@ -22,6 +22,13 @@
   <!-- Bib2JSON -->
   <script type="text/javascript" src="../libs/bib2json/Parser.js"></script>
   <script type="text/javascript" src="./makeBibEntry.js"></script>
+
+  <!-- JQuery -->
+  <script type="text/javascript" src="../libs/jquery-2.1.1.js"></script>
+
+  <!-- Our stuff -->
+  <script type="text/javascript" src="../js/ref.js"></script>
+
   <script>
     // inline bibtex source (in real life, this comes from another file
     // or API, but this prevents needing a local server running to access it)
@@ -45,15 +52,18 @@
       pages = {439-58}\n\
       badfield = badd\n\
     }";
-    window.onload= function () {
+
+    window.onload = function () {
+      parseLinks(['.links']); // This needs to happen before the below code
+
       // var entries = BibtexParser('@Book{book1, badfield = "baddd", author = "Knuth, Donald", title = "Concrete Mathematics", year = "1994", address="Reading", publisher="Addison-Wesley"}');
       var entries = BibtexParser(bibSrc);
-      for (e=0; e<entries.entries.length; e++) {
-        var entry=entries.entries[e];
+      for (e = 0; e < entries.entries.length; e++) {
+        var entry = entries.entries[e];
         makeBibEntry(entry,'chicago','#bib2json');
       }
     }
-  </script>
+   </script>
 
   <!-- Templates -->
   <!-- CHICAGO STYLE CITATIONS
@@ -164,7 +174,7 @@
           \end{equation}
         </p>
 
-        <p>Sed dignissim lacinia nunc. Curabitur tortor. Pellentesque nibh. Aenean quam. In scelerisque sem at dolor. Maecenas mattis. Sed convallis tristique sem. Proin ut ligula vel nunc egestas porttitor. Morbi lectus risus, iaculis vel, suscipit quis, luctus non, massa. Fusce ac turpis quis ligula lacinia aliquet. Mauris ipsum. Nulla metus metus, ullamcorper vel, tincidunt sed, euismod in, nibh. Quisque volutpat condimentum velit. See also <a href="#book1">(Knuth, 1994)</a>. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. </p>
+        <p class='links'>Sed dignissim lacinia nunc. Curabitur tortor. Pellentesque nibh. Aenean quam. In scelerisque sem at dolor. Maecenas mattis. Sed convallis tristique sem. Proin ut ligula vel nunc egestas porttitor. Morbi lectus risus, iaculis vel, suscipit quis, luctus non, massa. Fusce ac turpis quis ligula lacinia aliquet. Mauris ipsum. Nulla metus metus, ullamcorper vel, tincidunt sed, euismod in, nibh. Quisque volutpat condimentum velit. See also \a{#book1}. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos.</p>
 
         <h3>Analysis</h3>
 
