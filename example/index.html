@@ -54,7 +54,7 @@
     }";
 
     window.onload = function () {
-      parseLinks(['.links']); // This needs to happen before the below code
+      parseLinks(); // This needs to happen before the below code
 
       // var entries = BibtexParser('@Book{book1, badfield = "baddd", author = "Knuth, Donald", title = "Concrete Mathematics", year = "1994", address="Reading", publisher="Addison-Wesley"}');
       var entries = BibtexParser(bibSrc);
@@ -174,9 +174,9 @@
           \end{equation}
         </p>
 
-        <p class='links'>Sed dignissim lacinia nunc. Curabitur tortor. Pellentesque nibh. Aenean quam. In scelerisque sem at dolor. Maecenas mattis. Sed convallis tristique sem. Proin ut ligula vel nunc egestas porttitor. Morbi lectus risus, iaculis vel, suscipit quis, luctus non, massa. Fusce ac turpis quis ligula lacinia aliquet. Mauris ipsum. Nulla metus metus, ullamcorper vel, tincidunt sed, euismod in, nibh. Quisque volutpat condimentum velit. See also \a{#book1}. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos.</p>
+        <p>Sed dignissim lacinia nunc. Curabitur tortor. Pellentesque nibh. Aenean quam. In scelerisque sem at dolor. Maecenas mattis. Sed convallis tristique sem. Proin ut ligula vel nunc egestas porttitor. Morbi lectus risus, iaculis vel, suscipit quis, luctus non, massa. Fusce ac turpis quis ligula lacinia aliquet. Mauris ipsum. Nulla metus metus, ullamcorper vel, tincidunt sed, euismod in, nibh. Quisque volutpat condimentum velit. See also \cite{#book1}. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos.</p>
 
-        <h3>Analysis</h3>
+        <h3>Analysis \cite{#book1}</h3>
 
         <p>
           Nulla metus metus, ullamcorper vel, tincidunt sed, euismod in, nibh. Quisque volutpat condimentum velit. See \eqref{eq:navstokes} taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Nam nec ante. Sed lacinia, urna non tincidunt mattis, tortor neque adipiscing diam, a cursus ipsum ante quis turpis. Nulla facilisi. See also \eqref{eq:mathjaxdemo}. Ut fringilla. Suspendisse potenti. Nunc feugiat mi a tellus consequat imperdiet. Vestibulum sapien. Proin quam.
