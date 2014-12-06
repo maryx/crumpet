@@ -14,7 +14,7 @@ var references = {
 };
 
 function parseLinks() {
-    var linkRegex = /(\\cite{#)([^}]*)(})/g,
+    var linkRegex = /(\\cite{)([^}]*)(})/g,
         hrefEnd = '</a>';
     $('body').html(
         $('body').html().replace(linkRegex, function($0, $1, $2) {
